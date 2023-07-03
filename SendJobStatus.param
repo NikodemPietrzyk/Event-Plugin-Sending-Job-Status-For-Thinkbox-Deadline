@@ -1,0 +1,45 @@
+Plugin=SendJobStatus
+Global=True
+[State]
+Type=Enum
+Items=Global Enabled;Opt-In;Disabled
+Label=State
+Default=Global Enabled
+
+EventPlugin=SendJobStatus.MyEvent
+OnJobFinished=True
+OnJobDeleted=True
+OnJobFailed=True
+OnJobSuspended=True
+OnJobStarted=True
+ScriptFile=
+
+
+#[State]
+#Type=Enum
+#Items=Global Enabled;Opt-In;Disabled
+#Label=State
+#Default=Global Enabled
+
+#[EventCallbacks]
+#Type=Label
+#Description=The Event Callbacks that this Event Plugin subscribes to.
+#Default=OnJobFinished;OnJobDeleted;OnJobFailed;OnJobSuspended
+
+#[RootUserOnly]
+#Type=Boolean
+#Label=Root User Only
+#Default=True
+#Description=Only send job status for jobs submitted by the user 'root'.
+
+#[Endpoint]
+#Type=String
+#Label=API Endpoint
+#Default=
+#Description=The URL endpoint for the API that will receive the job status.
+
+#[AuthToken]
+#Type=String
+#Label=Authorization Token
+#Default=
+#Description=The authorization token to use for the API endpoint (if required).
